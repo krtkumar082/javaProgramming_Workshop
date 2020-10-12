@@ -1,5 +1,6 @@
 package com.tictactoe;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToeGame {
@@ -58,6 +59,24 @@ public class TicTacToeGame {
 		else
 			selectIndexByUser();
 	}
+	
+	public static int toss() {
+		Random R=new Random();
+		System.out.println("Defining 0 for user and 1 for computer");
+		int player=0;
+		int value=R.nextInt(2);
+		switch(value) {
+		case 0: System.out.println("user will move first");
+		        return 0;
+		       
+		case 1: System.out.println("computer will move first");
+				return 1;
+		}
+		return 0;
+		
+		
+	}
+	
  public static void main(String[] args) {
 	System.out.println("Welcome to tic tac toe game");
 	board=createBoard();
@@ -70,5 +89,10 @@ public class TicTacToeGame {
 	showBoard();
 	selectIndexByUser();
 	showBoard();
+	int toss= toss();
+	if(toss==0) {
+		selectIndexByUser();
+		showBoard();
+	}
 }
 }
