@@ -110,6 +110,10 @@ public class TicTacToeGame {
 			}
 		}
 		if(!take) {
+			take=toBlockOpponent();
+		}
+		
+		if(!take) {
 			for(int i=1;i < board.length;i++) {
 				if(board[i]==' ') {
 					board[i]=computer;
@@ -118,6 +122,25 @@ public class TicTacToeGame {
 			}
 		}
 		
+		
+	}
+	public static boolean toBlockOpponent() {
+		boolean take=false;
+		for (int i = 1; i < board.length; i++) {
+			if(board[i]==' ') {
+				board[i] = player;
+				if(!checkWin())
+				{
+					board[i] = ' '; 
+				}
+				else {
+					board[i]=computer;
+					take = true;
+					break;
+				}
+			}
+		}
+		return take;
 	}
 
 	public static void main(String[] args) {
