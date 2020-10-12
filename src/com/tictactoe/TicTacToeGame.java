@@ -93,6 +93,32 @@ public class TicTacToeGame {
 		else
 			return false;
 	}
+	
+	public static void computerMove() {
+		boolean take=false;
+		for (int i = 1; i < board.length; i++) {
+			if(board[i]==' ') {
+				board[i] = computer;
+				if(!checkWin())
+				{
+					board[i] = ' '; 
+				}
+				else {
+					take = true;
+					break;
+				}
+			}
+		}
+		if(!take) {
+			for(int i=1;i < board.length;i++) {
+				if(board[i]==' ') {
+					board[i]=computer;
+					break;
+				}
+			}
+		}
+		
+	}
 
 	public static void main(String[] args) {
 	System.out.println("Welcome to tic tac toe game");
@@ -118,7 +144,7 @@ public class TicTacToeGame {
 				            turn=1;
 	           }
 	       else {
-	    				selectIndexByUser(computer);
+	    				computerMove();
 	 					showBoard();
 	 					win=checkWin();
 	     if(win) {
