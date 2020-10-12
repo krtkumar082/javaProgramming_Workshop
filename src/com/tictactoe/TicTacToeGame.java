@@ -177,7 +177,8 @@ public class TicTacToeGame {
 		return false;	
 	}
 	public static void main(String[] args) {
-	System.out.println("Welcome to tic tac toe game");
+	do{
+		System.out.println("Welcome to tic tac toe game");
 	board=createBoard();
 	 player=takeInput();
      computer=' ';
@@ -212,5 +213,18 @@ public class TicTacToeGame {
 		}
 	if(!win)
 		System.out.println("game tie !!!!!\n");
-	  }
-	}
+	
+	System.out.println("wants to play the game again Y/N");
+	char ask=sc.next().charAt(0);
+	if(ask=='Y')
+		continue;
+	else
+		break;
+	
+	}while(true);
+	System.out.println("game is over");
+}
+}
+	
+	
+	
