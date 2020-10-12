@@ -17,6 +17,13 @@ public class TicTacToeGame {
 		return user;
 		
 	}
+	public static void showBoard(char[] ch) {
+			System.out.println("( " +ch[1]+ "| "+ch[2]+"| "+ch[3]+")");
+			System.out.println("( " +ch[4]+ "| "+ch[5]+"| "+ch[6]+")");
+			System.out.println("( " +ch[7]+ "| "+ch[8]+"| "+ch[9]+")");
+			System.out.println(" ");
+		
+	}
  public static void main(String[] args) {
 	System.out.println("Welcome to tic tac toe game");
 	char[] board=createBoard();
@@ -26,6 +33,7 @@ public class TicTacToeGame {
 		computer='O';
 	else
 		computer='X';
+	showBoard(board);
 	
 }
 }
