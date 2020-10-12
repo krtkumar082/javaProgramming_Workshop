@@ -112,7 +112,9 @@ public class TicTacToeGame {
 		if(!take) {
 			take=toBlockOpponent();
 		}
-		
+		if(!take) {
+			take=cornerMove();
+		}
 		if(!take) {
 			for(int i=1;i < board.length;i++) {
 				if(board[i]==' ') {
@@ -143,6 +145,27 @@ public class TicTacToeGame {
 		return take;
 	}
 
+	
+	public static boolean cornerMove() {
+		if(board[1]==' ') {
+			board[1]=computer;
+			return true;
+		}
+		else if(board[3]==' ') {
+			board[3]=computer;
+			return true;
+		}
+		else if(board[7]==' ') {
+			board[7]=computer;
+			return true;
+		}
+		else if(board[9]==' ') {
+			board[9]=computer;
+			return true;
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) {
 	System.out.println("Welcome to tic tac toe game");
 	board=createBoard();
