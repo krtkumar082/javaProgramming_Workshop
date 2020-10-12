@@ -194,7 +194,7 @@ public class TicTacToeGame {
 	        	 			showBoard();
 	        	 			win=checkWin();
 				     if(win) {
-							System.out.println("player won the game\n");
+							System.out.println("player won the game\n!!!!");
 							break;
 					    }
 				            turn=1;
@@ -204,13 +204,13 @@ public class TicTacToeGame {
 	 					showBoard();
 	 					win=checkWin();
 	     if(win) {
-						System.out.println("computer won the game\n");
+						System.out.println("computer won the game!!!\n");
 						break;
 	     			}
 	     				turn=0;
 	       	}
 		}
 	if(!win)
-		System.out.println("game tie\n");
+		System.out.println("game tie !!!!!\n");
 	  }
 	}
